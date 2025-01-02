@@ -18,7 +18,7 @@ const InputRow = styled.div<{ selected: boolean }>`
   ${({ theme }) => theme.flexRowNoWrap}
   align-items: center;
   padding: ${({ selected }) => (selected ? '0.75rem 0.5rem 0.75rem 1rem' : '0.75rem 0.75rem 0.75rem 1rem')};
-  `
+`
 
 const CurrencySelect = styled.button<{ selected: boolean }>`
   align-items: center;
@@ -164,11 +164,11 @@ export default function CurrencyInputPanel({
   }, [setModalOpen])
 
   return (
-    <InputPanel id={id} >
-      <Container hideInput={hideInput} >
+    <InputPanel id={id}>
+      <Container hideInput={hideInput}>
         {!hideInput && (
-          <LabelRow >
-            <RowBetween >
+          <LabelRow>
+            <RowBetween>
               <TYPE.body color={theme.text2} fontWeight={500} fontSize={14}>
                 {label}
               </TYPE.body>
@@ -189,7 +189,7 @@ export default function CurrencyInputPanel({
           </LabelRow>
         )}
         <InputRow style={hideInput ? { padding: '0', borderRadius: '8px' } : {}} selected={disableCurrencySelect}>
-        <CurrencySelect
+          <CurrencySelect
             selected={!!currency}
             className="open-currency-select-button"
             onClick={() => {
@@ -220,13 +220,13 @@ export default function CurrencyInputPanel({
               {!disableCurrencySelect && <StyledDropDown selected={!!currency} />}
             </Aligner>
           </CurrencySelect>
-          
-          {!hideInput && (  
+
+          {!hideInput && (
             <>
               {/* {account && currency && showMaxButton && label !== 'To' && (
                 <StyledBalanceMax onClick={onMax}>MAX</StyledBalanceMax>
               )} */}
-                            <NumericalInput
+              <NumericalInput
                 className="token-amount-input"
                 value={value}
                 onUserInput={val => {
@@ -235,7 +235,6 @@ export default function CurrencyInputPanel({
               />
             </>
           )}
-          
         </InputRow>
       </Container>
       {!disableCurrencySelect && onCurrencySelect && (
